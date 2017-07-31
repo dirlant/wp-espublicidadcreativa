@@ -1,6 +1,10 @@
 <?php
+
+require_once dirname( __FILE__ ) . '/inc/opciones.php'; // opciones del archivo
+
+
 // Llamados a las librerias
-function espublicidadcreativa_styles(){
+function wpks_landing_styles(){
 
   // Registrando los estilos
   wp_register_style('normalize', $src = get_template_directory_uri() . '/css/normalize.css', $deps = array(), $ver = 'v7.0.0' );
@@ -22,10 +26,10 @@ function espublicidadcreativa_styles(){
   wp_enqueue_script('scripts');
 }
 
-add_action( 'wp_enqueue_scripts', 'espublicidadcreativa_styles');
+add_action( 'wp_enqueue_scripts', 'wpks_landing_styles');
 
 // Creacion de menus disponibles
-function espublicidadcreativa_menus(){
+function wpks_landing_menus(){
   register_nav_menus( $locations = array(
     'header-menu' => __('Principal Menu', 'espublicidadcreativa'),
     'social-menu' => __('Social Menu', 'espublicidadcreativa')
@@ -33,13 +37,22 @@ function espublicidadcreativa_menus(){
   ));
 }
 
-add_action( 'init', 'espublicidadcreativa_menus' );
+add_action( 'init', 'wpks_landing_menus' );
 
 
 // Llamando a la funcion de imagen destacada
-function espublicidadcreativa_setup(){
+$args = array(
+	'default-image' => 'images/bg.jpg',
+);
+add_theme_support( 'custom-background-image', $args );
+
+function wpks_landing_setup(){
   add_theme_support( 'post-thumbnails' );
 }
+add_action( 'after_setup_theme', 'wpks_landing_setup');
 
-add_action( 'after_setup_theme', 'espublicidadcreativa_setup');
+
+
+
+
 ?>

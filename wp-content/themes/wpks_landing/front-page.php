@@ -9,17 +9,8 @@
 
 				<!-- Header -->
 				<header id="header" class="alt">
-
-
-
-
-
-
-
-
 					<span class="logo"><img src="<?php echo get_template_directory_uri();?>/images/logo.svg" alt="" /></span>
 					<h1>Stellar</h1>
-					<?php the_content() ?>
 					built by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a>.</p>
         </header>
 
