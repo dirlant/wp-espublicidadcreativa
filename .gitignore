@@ -87,12 +87,12 @@ Thumbs.db
 # "themes" directory
 wp-content/*
 !wp-content/mu-plugins/
-!wp-content/plugins/
+!wp-content/plugins
 !wp-content/themes/
 
-# ignore these plugins from the core
+
+# ignore these plugins
 wp-content/plugins/hello.php
-wp-content/plugins/akismet/
 
 # ignore specific themes
 wp-content/themes/twenty*/
